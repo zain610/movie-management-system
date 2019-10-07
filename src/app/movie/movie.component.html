@@ -53,11 +53,11 @@
 <!-- Second Section: Add new Movie -->
 <div class="section" *ngIf="section==2">
     <div class="form-group">
-        <label for="title">Full Name</label>
+        <label for="title">Title</label>
         <input type="text" class="form-control" id="title" [(ngModel)]="title">
     </div>
     <div class="form-group">
-        <label for="year">Year</label>
+        <label for="year">Release Year</label>
         <input type="number" class="form-control" id="actorName" [(ngModel)]="year">
     </div>
     <button type="submit" class="btn btn-primary" (click)="onSaveMovie()">Save Movie</button>
@@ -137,7 +137,7 @@
         <div *ngIf="moviesDB.length>0">
             <label>Select Movie</label>
             <select [(ngModel)]="selectedMovie" class="form-control">
-                <option *ngFor="let movie of moviesDB" value={{movie._id}}>{{movie.title}}</option>
+                <option *ngFor="let movie of moviesDB" value={{movie}}>{{movie.title}}</option>
             </select> 
         </div>
         <div *ngIf="actorsDB.length>0">
@@ -147,6 +147,7 @@
             </select>   
             
         </div>
+        <p *ngIf="selectedMovie">Movie title: {{selectedMovie.name}}</p>
         
     </div>
     <button *ngIf="selectedMovie && selectedActor" style="margin:0.2%" type="submit" class="btn btn-primary" (click)="onAddActorToMovie()">Add Actor to Movie</button>

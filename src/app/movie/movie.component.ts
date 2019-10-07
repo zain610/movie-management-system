@@ -11,7 +11,7 @@ export class MovieComponent implements OnInit {
   moviesDB: any[] = [];
   actorsDB: any[] = [];
   
-  section = 6;
+  section = 1;
   
   title: string;
   year: number;
@@ -27,6 +27,7 @@ export class MovieComponent implements OnInit {
   onGetMovies() {
     this.dbService.getMovies().subscribe((data: any[]) => {
       this.moviesDB = data;
+
     });
   }
   //Get All Actors
@@ -40,6 +41,7 @@ export class MovieComponent implements OnInit {
     let obj = { title: this.title, year: this.year };
     this.dbService.createMovie(obj).subscribe(result => {
       this.onGetMovies();
+      this.section =  1;
     });
   }
   // Update an Actor

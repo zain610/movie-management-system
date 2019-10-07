@@ -21,6 +21,7 @@ export class ActorComponent implements OnInit {
   onGetActors() {
     this.dbService.getActors().subscribe((data: any[]) => {
       this.actorsDB = data;
+      this.section = 1;
     });
   }
   //Create a new Actor, POST request
