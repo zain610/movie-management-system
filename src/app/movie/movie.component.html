@@ -137,7 +137,7 @@
         <div *ngIf="moviesDB.length>0">
             <label>Select Movie</label>
             <select [(ngModel)]="selectedMovie" class="form-control">
-                <option *ngFor="let movie of moviesDB" value={{movie}}>{{movie.title}}</option>
+                <option *ngFor="let movie of moviesDB" value={{movie._id}}>{{movie.title}}</option>
             </select> 
         </div>
         <div *ngIf="actorsDB.length>0">
@@ -147,7 +147,6 @@
             </select>   
             
         </div>
-        <p *ngIf="selectedMovie">Movie title: {{selectedMovie.name}}</p>
         
     </div>
     <button *ngIf="selectedMovie && selectedActor" style="margin:0.2%" type="submit" class="btn btn-primary" (click)="onAddActorToMovie()">Add Actor to Movie</button>

@@ -72,6 +72,7 @@ export class MovieComponent implements OnInit {
   onAddActorToMovie() {
     const movieId = this.selectedMovie
     const actorId = this.selectedActor
+    console.log(movieId, actorId)
     let obj = {id:actorId}
     this.dbService.addActorToMovie(movieId, obj).subscribe(result => {
       console.log(result)
