@@ -1,0 +1,23 @@
+
+<!-- Section 6: Add Actor to movie -->
+<div>
+    <h4>Add Actor to Movie</h4>
+    <div class="form-group">
+        <div *ngIf="moviesDB.length>0">
+            <label>Select Movie</label>
+            <select [(ngModel)]="selectedMovie" class="form-control">
+                <option *ngFor="let movie of moviesDB" value={{movie._id}}>{{movie.title}}</option>
+            </select> 
+        </div>
+        <div *ngIf="actorsDB.length>0">
+            <label>Select Actors</label>
+            <select [(ngModel)]="selectedActor" class="form-control">
+                <option *ngFor="let actor of actorsDB" value={{actor._id}}>{{actor.name}}</option>
+            </select>   
+            
+        </div>
+        
+    </div>
+    <button *ngIf="selectedMovie && selectedActor" style="margin:0.2%" type="submit" class="btn btn-primary" (click)="onAddActorToMovie()">Add Actor to Movie</button>
+    
+</div>

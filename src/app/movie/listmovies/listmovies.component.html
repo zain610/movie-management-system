@@ -1,0 +1,23 @@
+<!-- First section: Display all in a tble -->
+<div>
+    <table class="table table-striped">
+        <tr>
+            <th>Title</th>
+            <th>Year</th>
+            <th>Actors</th>
+            <th>Actions</th>
+        </tr>
+        <tr *ngFor="let item of moviesDB">
+            <td>{{item.title}}</td>
+            <td>{{item.year}}</td>
+            <td>
+                <ul *ngFor="let actor of item.actors">
+                    <li>{{actor.name}}</li>
+                </ul>
+            </td>
+            <td>
+                <button type="submit" class="btn btn-primary" (click)="onDeleteMovie(item)">Delete</button>
+            </td>
+        </tr>
+    </table>
+</div>
