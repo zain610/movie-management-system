@@ -34,7 +34,7 @@ export class UpdatemovieComponent implements OnInit {
       let obj = { title: this.title, year: this.year };
       this.dbService.updateMovie(this.movieId, obj).subscribe(result => {
         this.onGetMovies();
-        this.router.navigate("/movies/listmovies")
+        this.router.navigate(["/movies/listmovies"])
       });
     }
 
