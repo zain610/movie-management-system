@@ -50,7 +50,7 @@ const appRoutes: Routes = [
     UpdatemovieComponent,
     DeletemovieComponent,
     AddActorToMovieComponent],
-    imports: [BrowserModule, HttpClientModule, FormsModule, RouterModule.forRoot(appRoutes)],
+    imports: [BrowserModule, HttpClientModule, FormsModule, RouterModule.forRoot(appRoutes, {useHash: true})],
     providers: [DatabaseService],
     bootstrap: [AppComponent],
   })

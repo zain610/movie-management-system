@@ -2,7 +2,7 @@ const bodyParser = require("body-parser");
 const express = require("express");
 const mongoose = require("mongoose");
 const path = require("path");
-const cors = require("cors");
+// const cors = require("cors");
 
 const actors = require("./routers/actorRouter");
 const movies = require("./routers/movieRouter");
@@ -11,7 +11,7 @@ const app = express();
 //Any request other than for CRUD operations should go to dist/movieAng
 app.use("/", express.static(path.join(__dirname, "dist/movieAng")));
 //enable Cross Origin Request Support for all routes. Unsafe to do this in production
-app.use(cors());
+// app.use(cors());
 
 app.listen(8080);
 app.use(bodyParser.json());
